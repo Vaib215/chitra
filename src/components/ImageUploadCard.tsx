@@ -50,34 +50,53 @@ export default function ImageUploadCard() {
     }
   };
 
-  const uploadImages = (e: { preventDefault: () => void }) => {
+  const uploadImages = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     setIsUploading(true);
-    files?.forEach(async (file) => {
+    const uploadPromises: any = files?.map(async (file) => {
       const response = await uploadFile(file);
-      toast({
-        title: "Uploaded image successfully",
-        description: "Copy the link to clipboard",
-        action: (
-          <ToastAction
-            onClick={() => {
-              navigator.clipboard.writeText(
-                window.location.host + "/api/" + response
-              );
-            }}
-            altText="Copy Url to clipboard"
-          >
-            Copy
-          </ToastAction>
-        ),
-      });
+      return response;
     });
-    setIsUploading(false);
-    setFiles(null);
-    setImageUrls([]);
-    if (fileInputRef.current) {
-      fileInputRef.current.value = "";
-    }
+    Promise.all(uploadPromises)
+      .then((responses) => {
+        setIsUploading(false);
+        setFiles(null);
+        setImageUrls([]);
+
+        if (fileInputRef.current) {
+          fileInputRef.current.value = "";
+        }
+
+        responses.forEach((response) => {
+          toast({
+            title: "Uploaded image successfully",
+            description: "Copy the link to clipboard",
+            action: (
+              <ToastAction
+                onClick={() => {
+                  navigator.clipboard.writeText(
+                    window.location.host + "/api/" + response
+                  );
+                }}
+                altText="Copy Url to clipboard"
+              >
+                Copy
+              </ToastAction>
+            ),
+          });
+        });
+      })
+      .catch((error) => {
+        console.error("Error occurred during file upload:", error);
+      })
+      .finally(() => {
+        setIsUploading(false);
+        setFiles(null);
+        setImageUrls([]);
+        if (fileInputRef.current) {
+          fileInputRef.current.value = "";
+        }
+      });
   };
 
   return (

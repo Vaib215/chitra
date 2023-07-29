@@ -8,13 +8,20 @@ export async function GET(
   try {
     const img = await getFile(params.id);
     const imgBlob = await fetch(img).then((res) => res.blob());
-    return new NextResponse(imgBlob, {
+    const buffer = await imgBlob.arrayBuffer();
+    return new NextResponse(Buffer.from(buffer), {
       headers: {
-        "Content-Type": "image/*",
+        "Content-Type": "image/png",
         "Cache-Control": "public, max-age=31536000, immutable",
-        "Content-Disposition": `attachment; filename="${params.id}.png"`,
       },
       status: 200,
     });
-  } catch (error) {}
+  } catch (error: any) {
+    return new NextResponse(error, {
+      headers: {
+        "Content-Type": "text/plain",
+      },
+      status: 404,
+    });
+  }
 }
