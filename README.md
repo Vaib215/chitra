@@ -1,34 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Chitra
 
-## Getting Started
+Chitra is a web app that allows you to upload image files and get short URLs that can be used anywhere else. Chitra uses [Appwrite](https://appwrite.io/) as the backend service for storing files and [Shadcn](https://shadcn.com/) as the UI framework for building the front-end in [Next.js](https://nextjs.org/).
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Upload image files in various formats (jpg, png, gif, etc.)
+- Get short URLs for your images that can be copied and shared
+- View and delete your uploaded images in a gallery
+- Responsive design for mobile and desktop devices
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Demo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can try out Chitra live at [chitra.vaib.live](https://chitra.vaib.live/).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Installation
 
-## Learn More
+To run Chitra locally, you need to have [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) installed on your system. You also need to have an [Appwrite](https://appwrite.io/) account and a project with a file storage service enabled.
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone this repository: `git clone https://github.com/Vaib215/chitra.git`
+2. Navigate to the project directory: `cd chitra`
+3. Install the dependencies: `npm install`
+4. Start the development server: `npm run dev`
+5. Open your browser and go to [http://localhost:3000](http://localhost:3000)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technologies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Chitra is built with the following technologies:
 
-## Deploy on Vercel
+- [Next.js](https://nextjs.org/) - A React framework for building web applications
+- [Appwrite](https://appwrite.io/) - A self-hosted backend service for web and mobile developers
+- [Shadcn](https://shadcn.com/) - A modern UI framework for React
+- [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard) - A component for copying text to clipboard
+- [react-toastify](https://github.com/fkhadra/react-toastify) - A library for adding toast notifications to React apps
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Feedback
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you have any feedback or suggestions, feel free to open an issue or a pull request on GitHub. You can also contact me at sisodiya.vaib215@gmail.com. I hope you enjoy using Chitra! 😊
