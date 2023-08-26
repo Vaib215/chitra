@@ -75,7 +75,7 @@ export default function ImageUploadCard() {
               <ToastAction
                 onClick={() => {
                   navigator.clipboard.writeText(
-                    window.location.host + "/api/" + response
+                    window.location.host + "/" + response
                   );
                 }}
                 altText="Copy Url to clipboard"
