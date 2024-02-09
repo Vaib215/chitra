@@ -11,7 +11,7 @@ Chitra is a web app that allows you to upload image files and get short URLs tha
 
 ## Demo
 
-You can try out Chitra live at [chitra.vaib.live](https://chitra.vaib.live/).
+You can try out Chitra live at [chitra.vaib.live](https://chitra-vaib215.vercel.app/).
 
 ## Installation
 
@@ -30,8 +30,6 @@ Chitra is built with the following technologies:
 - [Next.js](https://nextjs.org/) - A React framework for building web applications
 - [Appwrite](https://appwrite.io/) - A self-hosted backend service for web and mobile developers
 - [Shadcn](https://shadcn.com/) - A modern UI framework for React
-- [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard) - A component for copying text to clipboard
-- [react-toastify](https://github.com/fkhadra/react-toastify) - A library for adding toast notifications to React apps
 
 ## Feedback
 
